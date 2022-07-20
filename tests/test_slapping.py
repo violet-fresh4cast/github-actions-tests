@@ -29,8 +29,6 @@ def test_regex_slaps():
     assert slap_many(LikeState.empty, '[ld]*ddl') is LikeState.liked
 
 
-
-
 def test_invalid_slap():
     with pytest.raises(ValueError):
         slap_many(LikeState.empty, 'x')
@@ -39,4 +37,3 @@ def test_invalid_slap():
 def test_print(capture_stdout):
     print("hello")
     assert capture_stdout["stdout"] == "hello\n"
-
