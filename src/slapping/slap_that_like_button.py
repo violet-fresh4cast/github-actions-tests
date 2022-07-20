@@ -23,6 +23,7 @@ slap_dislike_transitions = {
 
 
 def slap_like(s: LikeState) -> LikeState:
+    """Hit the like button!"""
     return slap_like_transitions[s]
 
 
