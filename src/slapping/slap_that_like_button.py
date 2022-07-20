@@ -1,7 +1,9 @@
+"""Main script"""
 import enum
 
 
 class LikeState(enum.Enum):
+    """Status of a like button."""
     empty = enum.auto()
     liked = enum.auto()
     disliked = enum.auto()
