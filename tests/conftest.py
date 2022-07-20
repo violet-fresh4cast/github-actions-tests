@@ -12,4 +12,3 @@ def capture_stdout(monkeypatch):
 
     monkeypatch.setattr(sys.stdout, 'write', fake_write)
     return buffer
-
