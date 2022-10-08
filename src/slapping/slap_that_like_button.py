@@ -33,6 +33,11 @@ def slap_dislike(s: LikeState) -> LikeState:
     return slap_dislike_transitions[s]
 
 
+def add_two_number(x: int, y: int) -> int:
+    """Add two integers."""
+    return x + y
+
+
 def slap_many(s: LikeState, slaps: str) -> LikeState:
     """Hit many buttons in a row."""
     for c in slaps:
