@@ -1,9 +1,10 @@
-"""Main script"""
+"""Main script."""
 import enum
 
 
 class LikeState(enum.Enum):
     """Status of a like button."""
+
     empty = enum.auto()
     liked = enum.auto()
     disliked = enum.auto()
@@ -23,21 +24,23 @@ slap_dislike_transitions = {
 
 
 def slap_like(s: LikeState) -> LikeState:
-    """Hit the like button!"""
+    """Hit the like button."""
     return slap_like_transitions[s]
 
 
 def slap_dislike(s: LikeState) -> LikeState:
+    """Hit the dislike button."""
     return slap_dislike_transitions[s]
 
 
 def slap_many(s: LikeState, slaps: str) -> LikeState:
+    """Hit many buttons in a row."""
     for c in slaps:
         c = c.lower()
-        if c == 'l':
+        if c == "l":
             s = slap_like(s)
-        elif c == 'd':
+        elif c == "d":
             s = slap_dislike(s)
         else:
-            raise ValueError('invalid slap')
+            raise ValueError("invalid slap")
     return s
