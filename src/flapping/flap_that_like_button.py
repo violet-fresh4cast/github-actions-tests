@@ -10,27 +10,27 @@ class LikeState(enum.Enum):
     disliked = enum.auto()
 
 
-slap_like_transitions = {
+flap_like_transitions = {
     LikeState.empty: LikeState.liked,
     LikeState.liked: LikeState.empty,
     LikeState.disliked: LikeState.liked,
 }
 
-slap_dislike_transitions = {
+flap_dislike_transitions = {
     LikeState.empty: LikeState.disliked,
     LikeState.liked: LikeState.disliked,
     LikeState.disliked: LikeState.empty,
 }
 
 
-def slap_like(s: LikeState) -> LikeState:
+def flap_like(s: LikeState) -> LikeState:
     """Hit the like button."""
-    return slap_like_transitions[s]
+    return flap_like_transitions[s]
 
 
-def slap_dislike(s: LikeState) -> LikeState:
+def flap_dislike(s: LikeState) -> LikeState:
     """Hit the dislike button."""
-    return slap_dislike_transitions[s]
+    return flap_dislike_transitions[s]
 
 
 def add_two_number_extra(x: int, y: int) -> int:
@@ -43,14 +43,14 @@ def add_two_number_extra(x: int, y: int) -> int:
         return 0
 
 
-def slap_many(s: LikeState, slaps: str) -> LikeState:
+def flap_many(s: LikeState, flaps: str) -> LikeState:
     """Hit many buttons in a row."""
-    for c in slaps:
+    for c in flaps:
         c = c.lower()
         if c == "l":
-            s = slap_like(s)
+            s = flap_like(s)
         elif c == "d":
-            s = slap_dislike(s)
+            s = flap_dislike(s)
         else:
-            raise ValueError("invalid slap")
+            raise ValueError("invalid flap")
     return s

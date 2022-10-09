@@ -9,6 +9,10 @@ Run pytest with:
 ```
 pytest --cov=src
 ```
+To find code with missing tests run:
+```
+pytest --cov-report term-missing --cov=src
+```
 
 Run flake8 with:
 ```
