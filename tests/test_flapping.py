@@ -1,7 +1,7 @@
 """Pytest tests."""
 import pytest
 
-from src.flapping.flap_that_like_button import (
+from src.new_name.flap_that_like_button import (
     LikeState,
     add_two_number_extra,
     flap_many,
